@@ -634,6 +634,63 @@ img {
   fill: currentColor;
 }
 
+.footer-subcribe-titel{
+  text-transform: uppercase;  
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 20px;
+}
+
+.sibscribe-group{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-email-footer{   
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  width: 358px;
+  height: 50px;
+  background-color: transparent; 
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;  
+}
+
+.input-email-footer::placeholder{
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  padding-left: 16px;
+}
+
+.send-btn-footer{  
+  width: 200px;
+  height: 50px;
+  background-color: #2196F3;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;  
+}
+
+.send-btn-footer-text{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+}
+
 /*Modal window*/
 .backdrop{
   position: fixed;
@@ -666,6 +723,7 @@ img {
   background-color: #FFFFFF;
   border-radius: 4px;
   z-index: var(--idx-backdrop); 
+  padding: 40px;  
 }
 
 .backdrop.is-hidden .modal{
@@ -688,5 +746,18 @@ img {
   color: #000000;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
+.feedback-modal-title{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;  
+  color: #212121;
+  margin-bottom: 12px;
+}
+
+.modal-link{
+  color: #2196F3;
 }
