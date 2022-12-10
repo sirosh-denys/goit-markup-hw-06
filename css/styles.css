@@ -307,19 +307,22 @@ img {
   position: relative;  
 }
 
-.overlay-text-aboutus{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  text-transform: uppercase;  
-  font-weight: 700;
-  line-height: 1.14; 
-  position: absolute;  
+.overlay-box-aboutus{
+  position: absolute;
+  left: calc(50% - 185px);
   bottom: 0;
   background-color: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
+}
+
+.overlay-text-aboutus{
+  color: #FFFFFF;
+  text-transform: uppercase;  
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  padding: 27px;
 }
 
 .team{
@@ -417,14 +420,13 @@ img {
   color: var(--main-color-dark-first);
   letter-spacing: 0.03em;  
   padding: 6px 22px;
-  transition: background-color var(--trns), color var(--trns), box-shadow var(--trns);
+  transition: background-color var(--trns), color var(--trns);
   
 }
 .filter-button:hover,
 .filter-button:focus{
   background-color: var(--accent-color);
   color: var(--main-color-light-first);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-cards-list{
@@ -466,8 +468,8 @@ img {
   backdrop-filter: blur(1px);
 }
 
-.portfolio-card-link:hover .overlay,
-.portfolio-card-link:focus .overlay{
+.portfolio-card:hover .overlay,
+.portfolio-card:focus .overlay{
   transform: translateY(0%);
 }
 
@@ -711,9 +713,9 @@ img {
 
 .modal{
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 536px;
+  top: 221px;
+  transform: translateX(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: #FFFFFF;
