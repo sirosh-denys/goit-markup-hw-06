@@ -307,22 +307,19 @@ img {
   position: relative;  
 }
 
-.overlay-box-aboutus{
+.overlay-text-aboutus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-transform: uppercase;  
+  font-weight: 700;
+  line-height: 1.14;  
   position: absolute;
-  left: calc(50% - 185px);
   bottom: 0;
   background-color: rgba(47, 48, 58, 0.8);
   width: 100%;
   height: 70px;
-}
-
-.overlay-text-aboutus{
-  color: #FFFFFF;
-  text-transform: uppercase;  
-  font-weight: 700;
-  line-height: 16px;
-  text-align: center;
-  padding: 27px;
 }
 
 .team{
@@ -420,13 +417,14 @@ img {
   color: var(--main-color-dark-first);
   letter-spacing: 0.03em;  
   padding: 6px 22px;
-  transition: background-color var(--trns), color var(--trns);
+  transition: background-color var(--trns), color var(--trns), box-shadow var(--trns);
   
 }
 .filter-button:hover,
 .filter-button:focus{
   background-color: var(--accent-color);
   color: var(--main-color-light-first);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-cards-list{
@@ -468,8 +466,8 @@ img {
   backdrop-filter: blur(1px);
 }
 
-.portfolio-card:hover .overlay,
-.portfolio-card:focus .overlay{
+.portfolio-card-link:hover .overlay,
+.portfolio-card-link:focus .overlay{
   transform: translateY(0%);
 }
 
@@ -547,8 +545,7 @@ img {
 
 .footer-container{
   display: flex;
-  align-items: baseline;
-  gap: 70px;
+  align-items: baseline;  
 }
 
 .footer-logo {
@@ -587,11 +584,13 @@ img {
   transition: color var(--trns);
 }
 
-
-
 .footer-contacts-item:hover,
 .footer-contacts-item:focus{
   color: var(--accent-color);
+}
+
+.footer-social-container{
+  margin-left: auto;
 }
 
 .footer-social-title{
@@ -632,6 +631,10 @@ img {
   fill: currentColor;
 }
 
+.footer-subscription-container{
+  margin-left: auto;
+}
+
 .footer-subcribe-titel{
   text-transform: uppercase;  
   color: #FFFFFF;
@@ -659,6 +662,7 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;  
+  padding-left: 15px;
 }
 
 .input-email-footer::placeholder{
@@ -694,14 +698,11 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(2px);  
-  
-  transition: opacity 150ms linear, visibility 150ms linear;
-  
+  backdrop-filter: blur(2px);    
+  transition: opacity 150ms linear, visibility 150ms linear;  
 }
 
 .backdrop.is-hidden{
@@ -713,11 +714,10 @@ img {
 
 .modal{
   position: absolute;
-  left: 536px;
-  top: 221px;
-  transform: translateX(-50%, -50%);
-  width: 528px;
-  height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
   background-color: #FFFFFF;
   border-radius: 4px;
   z-index: var(--idx-backdrop); 
@@ -767,8 +767,9 @@ img {
 }
 
 .modal-form-group{
-  width: 448px;
-  height: 338px;
+  display: block;
+  width: 448px;  
+  height: 342px;
   margin-bottom: 21px;
 }
 
@@ -779,6 +780,7 @@ img {
   outline: transparent;
   align-items: center;
   align-items: center;
+  /*height: 58px;*/
   /*display: flex;
   box-sizing: border-box;
   position: relative;
@@ -786,7 +788,7 @@ img {
 }
 
 .form-field:not(:last-child) {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /*
@@ -813,7 +815,7 @@ img {
 .form-icon{  
   position: absolute;
   display: inline-block;
-  top: 55%;
+  top: 65%;
   left: 12px;
   transform: translateY(-50%);
   fill: #212121;
@@ -826,7 +828,8 @@ img {
 }
 
 .form-input{
-  width: 448px;
+  display: inline-block;
+  width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -837,6 +840,8 @@ img {
   transition: border var(--trns);
 }
 
+.form-textarea:hover,
+.form-textarea:focus,
 .form-input:hover,
 .form-input:focus {
   border: 1px solid #2196F3;
@@ -855,7 +860,22 @@ img {
   color: #757575;  
 }
 
-.form-input-textarea{
+.form-field-textaria {
+  display: block;
+  position: relative;
+  /*display: flex;*/
+  outline: transparent;
+  align-items: center;
+  align-items: center;
+  /*height: 58px;*/
+  /*display: flex;
+  box-sizing: border-box;
+  position: relative;
+  align-items: center;  */
+}
+
+.form-textarea{
+  display: inline-block;
   position: absolute;
   width: 100%;
   height: 118.6px;
@@ -951,6 +971,7 @@ img {
   color: #FFFFFF;
   border: unset;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.06em;
   transition: background-color var(--trns);
 }
 
